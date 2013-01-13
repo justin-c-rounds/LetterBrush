@@ -214,3 +214,14 @@ button.beingClicked {
 .ui-slider {
   border: 1px solid #929292;
 }
+
+#tooltip {
+  position: absolute;
+  z-index: 999;
+  background: lightyellow;
+  border: 1px solid lightgrey;
+  padding: 0.25em;
+  color: black;
+  display: none;
+  margin: 20px 0 0 20px;
+}

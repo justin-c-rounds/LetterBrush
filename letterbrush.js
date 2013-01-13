@@ -29,6 +29,8 @@ $(function() {
     width: 40,
     height: 30
   };
+
+  var tooltip = $("#tooltip");
   
   var interaction = {cancelled: false, dragging: false};
   
@@ -277,6 +279,9 @@ $(function() {
                      (row - interaction.originalRow - 1) * view.scale,
                      (col - interaction.originalCol + 1) * view.scale);
         }
+        tooltip.text((Math.abs(interaction.originalRow - row) + 1) + ',' + (Math.abs(interaction.originalCol - col) + 1));
+        tooltip.css({'top': col * view.scale, 'left': row * view.scale});
+        tooltip.show();
       },
       mouseup: function(row, col) {
         var startX = 0;
@@ -318,6 +323,7 @@ $(function() {
           }
         }
         draw();
+        tooltip.hide();
       }
     })
     
